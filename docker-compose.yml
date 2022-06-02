@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  mysqldb:
+    platform: linux/x86_64 # for M1 chip
+    image: mysql:latest
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mysql_db
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - ./mysql-docker/mysql/data:/var/lib/mysql
+      - ./mysql-docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./mysql-docker/mysql/sql:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
