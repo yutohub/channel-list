@@ -10,5 +10,6 @@ func main() {
 	router := gin.Default()
 	router.LoadHTMLGlob("templates/*.tmpl")
 	router.GET("/", web.IndexHandler)
+	router.GET("/signup", web.WillSignupHandler)
 	router.Run("localhost:8080")
 }
