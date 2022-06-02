@@ -14,5 +14,6 @@ func main() {
 	router.POST("/signup", web.SignupHandler)
 	router.GET("/signin", web.WillSigninHandler)
 	router.POST("/signin", web.SigninHandler)
+	router.POST("/signout", web.SignoutHandler)
 	router.Run("localhost:8080")
 }

@@ -6,6 +6,7 @@
 </head>
 <body>
     <h1>ログイン</h1>
+    <a href="/signup">ユーザー登録</a>
     <form action="/signin" method="POST">
         <input type="hidden" name="csrf_token" value="{{$.CSRFToken}}">
         <div>名前: <input type="TEXT" name="name" /></div>
