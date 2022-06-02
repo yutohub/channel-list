@@ -13,5 +13,6 @@ func main() {
 	router.GET("/signup", web.WillSignupHandler)
 	router.POST("/signup", web.SignupHandler)
 	router.GET("/signin", web.WillSigninHandler)
+	router.POST("/signin", web.SigninHandler)
 	router.Run("localhost:8080")
 }

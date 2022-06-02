@@ -28,3 +28,10 @@ func SignupHandler(c *gin.Context) {
 func WillSigninHandler(c *gin.Context) {
 	c.HTML(http.StatusOK, "signin.tmpl", gin.H{})
 }
+
+func SigninHandler(c *gin.Context) {
+	name := c.Request.FormValue("name")
+	password := c.Request.FormValue("password")
+	fmt.Println(name)
+	fmt.Println(password)
+}
