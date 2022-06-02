@@ -1,6 +1,7 @@
 package web
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -15,4 +16,11 @@ func IndexHandler(c *gin.Context) {
 
 func WillSignupHandler(c *gin.Context) {
 	c.HTML(http.StatusOK, "signup.tmpl", gin.H{})
+}
+
+func SignupHandler(c *gin.Context) {
+	name := c.Request.FormValue("name")
+	password := c.Request.FormValue("password")
+	fmt.Println(name)
+	fmt.Println(password)
 }

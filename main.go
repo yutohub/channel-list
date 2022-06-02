@@ -11,5 +11,6 @@ func main() {
 	router.LoadHTMLGlob("templates/*.tmpl")
 	router.GET("/", web.IndexHandler)
 	router.GET("/signup", web.WillSignupHandler)
+	router.POST("/signup", web.SignupHandler)
 	router.Run("localhost:8080")
 }
