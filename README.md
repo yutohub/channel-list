@@ -1,7 +1,7 @@
 # channel-list
 Develop a service to list and organize channels.
 
-Docker Container
+## Prepare Docker Container
 ```
 # Starting Docker Container
 $ docker-compose up -d
@@ -33,3 +33,32 @@ mysql> \q
 # Exit From Container
 $ exit
 ```
+
+## Server startup
+
+```
+$ DBUSER=root DBPASS=root go run .
+Check -> http://localhost:8080/
+```
+
+## Token Authentication
+
+When a client signin, an token with an expiration time is generated.
+
+### Security
+
+- Save passwords as hashes
+- Token generation by random numbers
+
+
+### Home (Before signin)
+<img src="images/home.png" width="200">
+
+### Signin
+<img src="images/signin.png" width="200">
+
+### Signup
+<img src="images/signup.png" width="200">
+
+### Home (After signup)
+<img src="images/home_signup.png" width="200">
